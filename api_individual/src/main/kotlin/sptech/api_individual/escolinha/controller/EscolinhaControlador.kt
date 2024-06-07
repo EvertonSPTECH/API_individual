@@ -14,7 +14,7 @@ class EscolinhaControlador(
 ) {
     @PostMapping
     fun cadastrar(@RequestBody escolinhaCadastro:EscolinhaCadastroDTO):ResponseEntity<Escolinha>{
-        val escolinha = escolinhaServico.cadastrar(escolinhaCadastro)
+        val escolinha = escolinhaServico.cadastrarEscolinha(escolinhaCadastro)
         return ResponseEntity.status(201).body(escolinha)
     }
 
