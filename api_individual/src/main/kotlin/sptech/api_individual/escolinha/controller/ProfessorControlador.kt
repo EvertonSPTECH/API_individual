@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*
 import sptech.api_individual.escolinha.domain.Professor
 import sptech.api_individual.escolinha.dto.*
 import sptech.api_individual.escolinha.service.ProfessorService
-import java.util.*
 
 @RestController
 @RequestMapping("/professores")
@@ -14,14 +13,12 @@ class ProfessorController(val professorService: ProfessorService) {
     @PostMapping
     fun cadastrarProfessor(@RequestBody professorCadastroDTO: ProfessorCadastroDTO): ResponseEntity<Professor> {
         val professor = professorService.cadastrarProfessor(professorCadastroDTO)
-
         return ResponseEntity.status(201).body(professor)
     }
 
     @GetMapping("/escolinha/{idEscolinha}")
     fun listarProfessoresPorEscolinha(@PathVariable idEscolinha: Int): ResponseEntity<List<Professor>> {
         val lista = professorService.listarProfessoresPorEscolinha(idEscolinha)
-
         return if(lista.isNotEmpty()){
             ResponseEntity.status(200).body(lista)
         } else {
@@ -32,7 +29,6 @@ class ProfessorController(val professorService: ProfessorService) {
     @GetMapping
     fun listarProfessores(): ResponseEntity<List<Professor>> {
         val lista = professorService.listarProfessores()
-
         return if(lista.isNotEmpty()){
             ResponseEntity.status(200).body(lista)
         } else {
@@ -43,10 +39,11 @@ class ProfessorController(val professorService: ProfessorService) {
     @GetMapping("/{idProfessor}")
     fun buscarProfessorPorId(@PathVariable idProfessor: Int): ResponseEntity<Professor> {
         val professor = professorService.buscarProfessorPorId(idProfessor)
-        if(professor != null){
-            return ResponseEntity.status(200).body(professor)
+        return if(professor != null){
+            ResponseEntity.status(200).body(professor)
+        } else {
+            ResponseEntity.status(404).build()
         }
-        return ResponseEntity.status(404).build()
     }
 
     @PatchMapping("/{idProfessor}/email")
