@@ -2,12 +2,14 @@ package sptech.api_individual.escolinha.service
 
 import jakarta.transaction.Transactional
 import org.modelmapper.ModelMapper
+import org.springframework.stereotype.Service
 import sptech.api_individual.escolinha.domain.Professor
 import sptech.api_individual.escolinha.dto.*
 import sptech.api_individual.escolinha.repository.EscolinhaRepositorio
 import sptech.api_individual.escolinha.repository.ProfessorRepositorio
 import java.util.*
 
+@Service
 class ProfessorService(
     val professorRepositorio: ProfessorRepositorio,
     val modelMapper: ModelMapper = ModelMapper()

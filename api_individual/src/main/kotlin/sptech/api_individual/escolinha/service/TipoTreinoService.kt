@@ -2,11 +2,13 @@ package sptech.api_individual.escolinha.service
 
 import jakarta.transaction.Transactional
 import org.modelmapper.ModelMapper
+import org.springframework.stereotype.Service
 import sptech.api_individual.escolinha.domain.TipoTreino
 import sptech.api_individual.escolinha.dto.AtualizarNomeDTO
 import sptech.api_individual.escolinha.dto.TipoTreinoCadastroDTO
 import sptech.api_individual.escolinha.repository.TipoTreinoRepositorio
 
+@Service
 class TipoTreinoService (
     val tipoTreinoRepositorio: TipoTreinoRepositorio,
     val modelMapper: ModelMapper = ModelMapper()
