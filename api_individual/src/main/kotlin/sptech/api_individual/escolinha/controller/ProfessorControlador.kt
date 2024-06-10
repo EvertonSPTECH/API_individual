@@ -9,7 +9,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/professores")
-class ProfessorController(private val professorService: ProfessorService) {
+class ProfessorController(val professorService: ProfessorService) {
 
     @PostMapping
     fun cadastrarProfessor(@RequestBody professorCadastroDTO: ProfessorCadastroDTO): ResponseEntity<Professor> {

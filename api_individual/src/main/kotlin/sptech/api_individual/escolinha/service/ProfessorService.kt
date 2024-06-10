@@ -10,7 +10,6 @@ import java.util.*
 
 class ProfessorService(
     val professorRepositorio: ProfessorRepositorio,
-    val escolinhaRepositorio: EscolinhaRepositorio,
     val modelMapper: ModelMapper = ModelMapper()
 ) {
     @Transactional
