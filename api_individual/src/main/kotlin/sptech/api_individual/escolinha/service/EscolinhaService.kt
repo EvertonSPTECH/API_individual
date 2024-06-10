@@ -1,4 +1,4 @@
-package sptech.api_individual.escolinha
+package sptech.api_individual.escolinha.service
 
 import jakarta.transaction.Transactional
 import org.modelmapper.ModelMapper
@@ -40,7 +40,7 @@ class EscolinhaService (
         // Busca a escolinha pelo seu ID, se não encontrar retorna null
         val escolinha = escolinhaRepositorio.findById(idEscolinha).orElse(null) ?: return null
         // Atualiza o nome da escolinha com o nome fornecido no DTO
-        escolinha.nomeEscolinha = atualizarNomeDTO.nomeEscolinha
+        escolinha.nomeEscolinha = atualizarNomeDTO.nome
         // Salva a escolinha atualizada no repositório
         return escolinhaRepositorio.save(escolinha)
     }

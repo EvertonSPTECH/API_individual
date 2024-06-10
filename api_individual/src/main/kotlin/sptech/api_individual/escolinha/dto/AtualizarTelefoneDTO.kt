@@ -2,7 +2,7 @@ package sptech.api_individual.escolinha.dto
 
 import jakarta.validation.constraints.NotBlank
 
-data class AtualizarNomeDTO(
+data class AtualizarTelefoneDTO (
     @field:NotBlank
-    val nome: String
+    var telefoneCelular:String
 )

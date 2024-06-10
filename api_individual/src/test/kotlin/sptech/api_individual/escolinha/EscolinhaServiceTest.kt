@@ -13,6 +13,7 @@ import sptech.api_individual.escolinha.domain.Endereco
 import sptech.api_individual.escolinha.domain.Escolinha
 import sptech.api_individual.escolinha.dto.*
 import sptech.api_individual.escolinha.repository.EscolinhaRepositorio
+import sptech.api_individual.escolinha.service.EscolinhaService
 
 @SpringBootTest
 class EscolinhaServiceTest {

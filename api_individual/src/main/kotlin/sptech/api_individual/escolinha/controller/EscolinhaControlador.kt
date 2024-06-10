@@ -2,15 +2,14 @@ package sptech.api_individual.escolinha.controller
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import sptech.api_individual.escolinha.EscolinhaService
+import sptech.api_individual.escolinha.service.EscolinhaService
 import sptech.api_individual.escolinha.domain.Escolinha
 import sptech.api_individual.escolinha.dto.*
-import java.util.Optional
 
 @RestController
 @RequestMapping("/escolinhas")
 class EscolinhaControlador(
-    val escolinhaServico:EscolinhaService
+    val escolinhaServico: EscolinhaService
 ) {
     @PostMapping
     fun cadastrar(@RequestBody escolinhaCadastro:EscolinhaCadastroDTO):ResponseEntity<Escolinha>{
